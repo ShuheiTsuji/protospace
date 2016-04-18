@@ -27,6 +27,7 @@ user_id             integer
 
 ##images table
 role                integer  
+image_url           text  
 product_id          integer  
 
 
