@@ -1,6 +1,6 @@
-##table
+#table
 
-#users table
+##users table
 
 name                string  
 password            string  
@@ -11,27 +11,27 @@ member              string
 profile             text  
 avatar              text  
 
-#products table
+##products table
 
 catch_copy          text  
-concept             text  
+concept             text  o
 updated_at          date  
 created_at          date  
 title               string  
 
-#comments table
+##comments table
 
-content             text  
+text                text  
 product_id          integer  
 user_id             integer  
 
-#images table
+##images table
 main_name           text  
 sub_name            text  
 product_id          integer  
 
 
-#likes table
+##likes table
 
 user_id             integer  
 product_id          integer  
