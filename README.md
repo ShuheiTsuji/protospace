@@ -14,7 +14,7 @@ avatar              text
 ##products table
 
 catch_copy          text  
-concept             text  o
+concept             text  
 updated_at          date  
 created_at          date  
 title               string  
@@ -26,8 +26,7 @@ product_id          integer
 user_id             integer  
 
 ##images table
-main_name           text  
-sub_name            text  
+role                integer  
 product_id          integer  
 
 
@@ -40,6 +39,7 @@ product_id          integer
 
 product has_many commments  
 product has_many likes  
+product has_many images  
 user has_many products  
 user has_many comments  
 user has_many likes  
@@ -49,3 +49,4 @@ likes belongs to product
 products belongs to user  
 comments belongs to user  
 likes belongs to user  
+images belongs to product  
