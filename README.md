@@ -19,7 +19,7 @@ title               string
 
 #comments table
 
-comment             text  
+content             text  
 product_id          integer  
 user_id             integer  
 
@@ -41,7 +41,7 @@ user has_many products
 user has_many comments  
 user has_many likes  
 
-*comments belongs to product  
+comments belongs to product  
 likes belongs to product  
 products belongs to user  
 comments belongs to user  
