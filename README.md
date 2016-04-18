@@ -1,3 +1,5 @@
+##table
+
 #users table
 
 name                string  
@@ -24,11 +26,12 @@ product_id          integer
 user_id             integer  
 
 #images table
-name                text  
+main_name           text  
+sub_name            text  
 product_id          integer  
 
 
-#likes
+#likes table
 
 user_id             integer  
 product_id          integer  
