@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-
+# utility
+gem 'haml-rails'
+gem 'erb2haml'
 
 gem 'rails', '4.2.5'
 gem 'mysql2', '>= 0.3.18'
@@ -20,6 +22,3 @@ group :development do
   gem 'spring'
 end
 
-# utility
-gem 'haml-rails'
-gem 'erb2haml'
