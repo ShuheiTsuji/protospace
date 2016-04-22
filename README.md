@@ -51,3 +51,4 @@ products belongs to user
 comments belongs to user  
 likes belongs to user  
 images belongs to product  
+
