@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 # utility
 gem 'haml-rails'
 gem 'erb2haml'
+gem 'bootstrap-sass'
 
 # function
 gem 'devise'
