@@ -4,14 +4,14 @@
       %span.icon-bar
       %span.icon-bar
       %span.icon-bar
-    = link_to 'root_path', class: :navbar-brand do
+    = link_to root_path, class: 'navbar-brand' do
       = image_tag("logo.png", alt: "PROTO TYPE - SHARE THE PROTOTYPE", height: "36px")
     .navbar-collapse.collapse.navbar-responsive-collapse
       //not login
       %ul.nav.navbar-nav.navbar-right
         %li
           .btn.btn-primary.navbar-btn
-            = link_to 'Get Started','/login'
+            = link_to 'Get Started' , user_session_path
       //login
       %ul.nav.navbar-nav.navbar-right
         %li.dropdown
@@ -25,5 +25,5 @@
               = link_to 'Logout','#'
         %li
           .btn.btn-primary.navbar-btn
-            = link_to 'New Proto','new_prototypes_path'
+            = link_to 'New Proto', new_prototype_path
 
