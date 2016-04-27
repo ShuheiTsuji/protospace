@@ -4,7 +4,7 @@
       %span.icon-bar
       %span.icon-bar
       %span.icon-bar
-    = link_to '/', class: 'navbar-brand' do
+    = link_to 'root_path', class: :navbar-brand do
       = image_tag("logo.png", alt: "PROTO TYPE - SHARE THE PROTOTYPE", height: "36px")
     .navbar-collapse.collapse.navbar-responsive-collapse
       //not login
@@ -25,5 +25,5 @@
               = link_to 'Logout','#'
         %li
           .btn.btn-primary.navbar-btn
-            = link_to '/proto/new','New Proto'
+            = link_to 'New Proto','new_prototypes_path'
 
