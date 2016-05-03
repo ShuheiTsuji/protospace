@@ -11,7 +11,7 @@
         - if user_signed_in?
           %li.dropdown
             %a.dropdown-toggle{ aria: { expanded: true }, data: { toggle: :dropdown }, href: "#", role: "button" }
-              Username
+              =  current_user.name
               %span.caret
             %ul.dropdown-menu{ role: "menu" }
               %li
@@ -19,7 +19,7 @@
               %li
                 = link_to "Logout", destroy_user_session_path, method: :delete
               %li
-                = link_to "MyPage",
+                = link_to "MyPage", user_path(current_user)
           %li
             .btn.btn-primary.navbar-btn
               = link_to "New Proto", '#'
