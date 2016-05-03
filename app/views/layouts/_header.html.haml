@@ -11,7 +11,7 @@
         - if user_signed_in?
           %li.dropdown
             %a.dropdown-toggle{ aria: { expanded: true }, data: { toggle: :dropdown }, href: "#", role: "button" }
-              =  current_user.name
+              = current_user.name
               %span.caret
             %ul.dropdown-menu{ role: "menu" }
               %li
