@@ -17,3 +17,4 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :member, :profile, :works, :avatar)
   end
 end
+
