@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def update
     current_user.update(update_params)
-    redirect_to user_path(current_user)
+    redirect_to user_path(current_user), notice: 'ログインに成功しました'
   end
 
   private
