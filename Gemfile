@@ -8,7 +8,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'autoprefixer-rails'
 
 # function
-gem 'pry-rails'
 gem 'devise'
 gem 'rails', '4.2.5'
 gem 'mysql2', '>= 0.3.18'
@@ -25,5 +24,6 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'pry-rails'
 end
 
