@@ -4,11 +4,11 @@ class UsersController < ApplicationController
   end
 
   def update
-    current_user.update(update_params)
-    if current_user.save
+    if current_user.update(update_params)
       redirect_to user_path(current_user), notice: 'succeed in edit'
     else
-      redirect_to edit_user_path(current_user), notice: 'fail in edit'
+      render :edit
+      flash[:danger] = "fail in edit"
     end
   end
 
