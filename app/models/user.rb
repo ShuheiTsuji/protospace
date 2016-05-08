@@ -8,5 +8,9 @@ class User < ActiveRecord::Base
   validates :member, presence: true
   validates :profile, presence: true
   validates :works, presence: true
+
+  has_many :products
+  has_many :comments
+  has_many :likes
 end
 
