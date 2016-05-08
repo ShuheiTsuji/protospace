@@ -18,23 +18,24 @@ concept             text
 updated_at          date  
 created_at          date  
 title               string  
+user_id             references  
 
 ##comments table
 
 text                text  
-product_id          integer  
-user_id             integer  
+product_id          references  
+user_id             references  
 
 ##images table
 role                integer  
 image               text  
-product_id          integer  
+product_id          references  
 
 
 ##likes table
 
-user_id             integer  
-product_id          integer  
+user_id             references  
+product_id          references  
 
 #association
 
