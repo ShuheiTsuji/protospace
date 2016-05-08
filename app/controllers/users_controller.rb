@@ -8,7 +8,6 @@ class UsersController < ApplicationController
       redirect_to user_path(current_user), notice: 'succeed in edit'
     else
       render :edit
-      flash[:danger] = "fail in edit"
     end
   end
 
