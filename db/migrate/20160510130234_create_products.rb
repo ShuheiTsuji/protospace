@@ -4,8 +4,8 @@ class CreateProducts < ActiveRecord::Migration
       t.text  :catch_copy
       t.text  :concept
       t.string  :title
+      t.references  :user
       t.timestamps
     end
   end
 end
-
