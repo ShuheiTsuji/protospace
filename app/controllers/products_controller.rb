@@ -5,16 +5,18 @@ class ProductsController < ApplicationController
   end
 
   def create
-    Product.create(create_params)
-    redirect_to :root
+    @product = Product.new(create_params)
+    if @product.save
+      redirect_to :root
+    else
+      render  :new
+    end
   end
 
   private
   def create_params
     params.require(:product).permit(:title, :catch_copy, :concept,
-      images_attributes: [:images]
-    )
+      images_attributes: [:image, :role])
   end
-
 end
 
