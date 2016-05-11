@@ -5,12 +5,8 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(create_params)
-    if @product.save
-      redirect_to :root
-    else
-      render  :new
-    end
+    Product.create(create_params)
+    redirect_to :root
   end
 
   private
@@ -19,4 +15,3 @@ class ProductsController < ApplicationController
       images_attributes: [:image, :role])
   end
 end
-
