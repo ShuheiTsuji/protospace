@@ -1,5 +1,6 @@
+= render "layouts/errorproduct"
 .container.proto-new
-  = form_for(@products) do |f|
+  = form_for [current_user, @product] do |f|
     .col-md-8.col-md-offset-2
       %header.row.user-nav.row
         .col-md-12
@@ -41,4 +42,5 @@
         /       = text_field_tag  placeholder: "Application"
       .row.text-center.proto-btn
         = f.submit "publish", class: "btn btn-lg btn-primary btn-block"
+
 

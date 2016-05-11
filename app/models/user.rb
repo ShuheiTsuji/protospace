@@ -4,11 +4,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates :name, presence: true, length: { maximum: 6 }
-  validates :member, presence: true
+  validates :name,    presence: true, length: { maximum: 6 }
+  validates :member,  presence: true
   validates :profile, presence: true
-  validates :works, presence: true
+  validates :works,   presence: true
 
-  has_many :products
+  has_many  :products
 end
 
