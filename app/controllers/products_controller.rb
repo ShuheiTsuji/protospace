@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
   def create
     @product  = current_user.products.new(create_params)
     if @product.save
-      redirect_to root_path
+      redirect_to root_path, notice: 'succeed in post'
     else
       render :new
     end

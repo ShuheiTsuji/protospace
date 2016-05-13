@@ -3,6 +3,6 @@ class Product < ActiveRecord::Base
   has_many   :images
   accepts_nested_attributes_for :images
 
-  validates :catch_copy,:concept,:title,  presence: true
+  validates :catch_copy, :concept, :title,  presence: true
 end
 
