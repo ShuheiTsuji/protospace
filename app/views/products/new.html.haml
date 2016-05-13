@@ -1,4 +1,4 @@
-= render "layouts/errorproduct"
+= render "layouts/error", danger: @product
 .container.proto-new
   = form_for [current_user, @product] do |f|
     .col-md-8.col-md-offset-2
