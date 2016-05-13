@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
   def create
     @product  = current_user.products.new(create_params)
     if @product.save
-      redirect_to :root
+      redirect_to root_path
     else
       render :new
     end
@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
 
   private
   def create_params
-    params.require(:product).permit(:title, :catch_copy, :concept, images_attributes: [:image, :role]).merge(user_id: params[:user_id])
+    params.require(:product).permit(:title, :catch_copy, :concept, images_attributes: [:image, :role])
   end
 end
 
