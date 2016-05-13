@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160508143508) do
+ActiveRecord::Schema.define(version: 20160510130234) do
 
   create_table "images", force: :cascade do |t|
-    t.integer  "role",       limit: 4
+    t.integer  "role",       limit: 4,     default: 1
     t.text     "image",      limit: 65535
     t.integer  "product_id", limit: 4
     t.datetime "created_at"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20160508143508) do
     t.text     "catch_copy", limit: 65535
     t.text     "concept",    limit: 65535
     t.string   "title",      limit: 255
+    t.integer  "user_id",    limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end
