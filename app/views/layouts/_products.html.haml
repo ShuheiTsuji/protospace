@@ -1,0 +1,17 @@
+.col-sm-4.col-md-3.proto-content
+  .thumbnail
+    = link_to '#' do
+      = image_tag products.images.main.first.image
+      .caption
+        %h3= products.title
+        .proto-meta
+          .proto-user
+            = link_to "by #{products.user.name}"
+          .proto-posted
+            = products.created_at.strftime('%m/%d/%Y')
+        %ul.proto-tag-list.list-inline
+          %li
+            %a{ href: "#", class: "btn btn-default"} iPad
+          %li
+            %a{ href: "#", class: "btn btn-default" } wireframe
+

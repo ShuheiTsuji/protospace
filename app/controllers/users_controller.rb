@@ -13,7 +13,13 @@ class UsersController < ApplicationController
 
   private
   def update_params
-    params.require(:user).permit(:name, :member, :profile, :works, :avatar)
+    params.require(:user).permit(
+      :name,
+      :member,
+      :profile,
+      :works,
+      :avatar
+      )
   end
 end
 

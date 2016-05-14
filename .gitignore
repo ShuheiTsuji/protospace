@@ -12,3 +12,9 @@
 !/log/.keep
 /tmp
 .idea/
+*.png
+*.svg
+*.jpg
+*.jpeg
+*.gif
+
