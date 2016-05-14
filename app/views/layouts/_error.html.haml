@@ -1,16 +1,8 @@
-<<<<<<< HEAD:app/views/layouts/_error.html.haml
 - if danger.errors.any?
-  %div{class: "alert alert-danger"}
-    %a{href: "#", "data-dismiss": "alert", class: "close"}×
+  %div{ class: "alert alert-danger" }
+    %a{ href: "#", "data-dismiss": "alert", class: "close" }×
     %ul
       - danger.errors.full_messages.each do |message|
-=======
-- if current_user.errors.any?
-  %div{class: "alert alert-danger"}
-    %a{href: "#", "data-dismiss": "alert", class: "close"}×
-    %ul
-      - current_user.errors.full_messages.each do |message|
->>>>>>> parent of 54e3e5f... create controller function and index.html.haml:app/views/layouts/_error.html.haml
         %li
           = message
 

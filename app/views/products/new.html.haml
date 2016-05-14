@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 = render "layouts/error", danger: @product
-=======
->>>>>>> parent of 54e3e5f... create controller function and index.html.haml
 .container.proto-new
-  = form_for(@products) do |f|
+  = form_for [current_user, @product] do |f|
     .col-md-8.col-md-offset-2
       %header.row.user-nav.row
         .col-md-12
@@ -44,9 +41,5 @@
         /     .col-md-3
         /       = text_field_tag  placeholder: "Application"
       .row.text-center.proto-btn
-<<<<<<< HEAD
         = f.submit "publish", class: "btn btn-lg btn-primary btn-block", data: { disable_with: "sending..." }
-=======
-        = f.submit "publish", class: "btn btn-lg btn-primary btn-block"
->>>>>>> parent of 54e3e5f... create controller function and index.html.haml
 
