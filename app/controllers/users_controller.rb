@@ -19,7 +19,7 @@ class UsersController < ApplicationController
       :profile,
       :works,
       :avatar
-      )
+    )
   end
 end
 

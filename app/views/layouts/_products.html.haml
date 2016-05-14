@@ -6,7 +6,7 @@
         %h3= products.title
         .proto-meta
           .proto-user
-            = link_to "by #{products.user.name}"
+            = link_to "by #{ products.user.name }"
           .proto-posted
             = products.created_at.strftime('%m/%d/%Y')
         %ul.proto-tag-list.list-inline
