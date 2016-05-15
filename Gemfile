@@ -8,6 +8,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'autoprefixer-rails'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'kaminari'
 
 # function
 gem 'devise'
@@ -27,5 +28,7 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'pry-rails'
+  gem 'bullet'
 end
+
 

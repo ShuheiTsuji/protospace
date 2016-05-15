@@ -1,7 +1,11 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = Product.order(created_at: :DESC).includes(:user)
+    @products = Product \
+                  .order(created_at: :DESC)
+                  .includes(:user)
+                  .page(params[:page])
+                  .per(20)
   end
 
   def new
@@ -18,6 +22,10 @@ class ProductsController < ApplicationController
     end
   end
 
+  def show
+    @product = Product.find(params[:id])
+  end
+
   private
   def create_params
     params.require(:product).permit(
@@ -28,3 +36,4 @@ class ProductsController < ApplicationController
     )
   end
 end
+
