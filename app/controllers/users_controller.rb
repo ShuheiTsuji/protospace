@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user     = User.find(params[:id])
-    @product  = Product.order(created_at: :DESC).includes(:user).page(params[:page]).per(3)
+    @products = Product.order(created_at: :DESC).includes(:user).page(params[:page]).per(20)
   end
 
   def update

@@ -20,7 +20,7 @@
             %p= @user.works
 .container.proto-list
   .row
-    = render partial: "layouts/products", collection: current_user.products
+    = render partial: "layouts/product", collection: @user.products
 
 .text-center
   = paginate(@products)
