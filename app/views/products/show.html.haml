@@ -4,13 +4,13 @@
       .media
         .media-left
           %a{href: "#"}
-          = image_tag(current_user.avatar, alt: "64×64", class: "media-object", style: "width: 64px; height: 64px;")
+          = image_tag(@product.user.avatar, alt: "64×64", class: "media-object", style: "width: 64px; height: 64px;")
         .media-body
           %h4#top-aligned-media.media-heading
             = @product.title
           .proto-user
-            = link_to "by #{current_user.name}"
-            %span.degree= current_user.profile
+            = link_to "by #{@product.user.name}"
+            %span.degree= @product.user.profile
 
     .col-md-6.text-right
       %button.btn.btn-default

@@ -1,14 +1,14 @@
 .col-sm-4.col-md-3.proto-content
   .thumbnail
-    = link_to user_product_path(current_user,products.id) do
-      = image_tag products.images.main.first.image
+    = link_to user_product_path(current_user,product.id) do
+      = image_tag product.images.main.first.image
       .caption
-        %h3= products.title
+        %h3= product.title
         .proto-meta
           .proto-user
-            = link_to "by #{ products.user.name }"
+            = link_to "by #{ product.user.name }"
           .proto-posted
-            = products.created_at.strftime('%m/%d/%Y')
+            = product.created_at.strftime('%m/%d/%Y')
         %ul.proto-tag-list.list-inline
           %li
             %a{ href: "#", class: "btn btn-default"} iPad

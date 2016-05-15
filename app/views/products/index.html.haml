@@ -14,11 +14,11 @@
 
 .container.proto-list
   .row
-    = render partial: "layouts/products", collection: @products
+    = render partial: "layouts/product", collection: @product
 .text-center
   %ul.pagination
     %li.disabled
-      = paginate(@products)
+      = paginate(@product)
     /   %a{ "aria-label" => "Previous", href: "#" }
     /     %span{ "aria-hidden" => "true" } «
     / %li.active
