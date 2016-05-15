@@ -21,8 +21,21 @@ class ProductsController < ApplicationController
     end
   end
 
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    if @product.update(product_params)
+      redirect_to root_path, notice: 'succeed in edit'
+    else
+      render :edit
+    end
+  end
+
   def create
-    @product  = current_user.products.new(create_params)
+    @product  = current_user.products.new(product_params)
     if @product.save
       redirect_to root_path, notice: 'succeed in post'
     else
@@ -35,7 +48,7 @@ class ProductsController < ApplicationController
   end
 
   private
-  def create_params
+  def product_params
     params.require(:product).permit(
       :title,
       :catch_copy,

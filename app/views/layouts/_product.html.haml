@@ -4,7 +4,12 @@
       %button.btn.btn-default{ id: "dropdownMenu", type: "button",  data: { toggle: "dropdown" } } ACTION
       %ul.dropdown-menu{ aria: { labelledby: "dropdownMenu1" } }
         %li
-          =link_to "Delete", "/users/#{product.user_id}/products/#{product.id}"  ,rel: "nofollow", data: {method: "delete"}
+          = link_to "Delete", "/users/#{product.user_id}/products/#{product.id}"  ,rel: "nofollow", data: {method: "delete"}
+        %li
+          = link_to "Edit"  , edit_user_product_path(current_user,product)
+
+
+
   .thumbnail
     = link_to user_product_path(current_user, product) do
       = image_tag product.images.main.first.image
