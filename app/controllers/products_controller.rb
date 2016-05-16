@@ -26,8 +26,8 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @product = Product.find(params[:id])
-    if @product.update(product_params)
+    product = Product.find(params[:id])
+    if product.update(product_params)
       redirect_to root_path, notice: 'succeed in edit'
     else
       render :edit
@@ -53,7 +53,7 @@ class ProductsController < ApplicationController
       :title,
       :catch_copy,
       :concept,
-      images_attributes: [:image, :role]
+      images_attributes: [:id, :image, :role, :_destroy]
     )
   end
 end
