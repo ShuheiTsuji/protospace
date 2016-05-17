@@ -603,6 +603,12 @@ body {
 button.btn.btn-default {
   position: absolute;
   z-index:100;
-  opacity: 0.5;
   color: black;
+  margin-left: 10px;
+  margin-top:  10px;
+}
+
+ul.dropdown-menu {
+  margin-top:  35px;
+  margin-left: 10px;
 }

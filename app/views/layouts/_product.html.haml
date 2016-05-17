@@ -5,10 +5,10 @@
         %button.btn.btn-default{ id: "dropdownMenu", type: "button",  data: { toggle: "dropdown" } } menu
         %ul.dropdown-menu{ aria: { labelledby: "dropdownMenu1" } }
           %li
-            = link_to "Delete", user_product_path(current_user,product), method: :delete
+            = link_to "Delete", user_product_path(product.user,product), method: :delete
           %li
-            = link_to "Edit"  , edit_user_product_path(current_user,product)
-    = link_to user_product_path(current_user, product) do
+            = link_to "Edit"  , edit_user_product_path(product.user,product)
+    = link_to user_product_path(product.user, product) do
       = image_tag product.images.main.first.image
       .caption
         %h3= product.title
