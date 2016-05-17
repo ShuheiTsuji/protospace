@@ -230,7 +230,6 @@ body {
   border: 1px solid #4A8EDD;
   border-radius: 3px;
 
-
   &:hover {
     border: 1px solid #4A8EDD;
     opacity: 0.9;
@@ -596,3 +595,14 @@ body {
   }
 }
 
+.thumbnail {
+  position: relative;
+}
+
+
+button.btn.btn-default {
+  position: absolute;
+  z-index:100;
+  opacity: 0.5;
+  color: black;
+}
