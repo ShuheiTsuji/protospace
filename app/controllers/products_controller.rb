@@ -45,6 +45,8 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @likes   = Like.where(product_id: params[:id])
+    @like = Like.find_by(user_id: current_user.id) if user_signed_in?
   end
 
   private
