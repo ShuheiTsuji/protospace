@@ -1,7 +1,6 @@
 .jumbotron
   .container.text-center
     = image_tag("header_logo.png", alt: "PROTO TYPE - SHARE THE PROTOTYPE", height: "73px")
-
 .filter-nav
   .container
     .row
@@ -19,20 +18,4 @@
   %ul.pagination
     %li.disabled
       = paginate(@products)
-    /   %a{ "aria-label" => "Previous", href: "#" }
-    /     %span{ "aria-hidden" => "true" } «
-    / %li.active
-    /   %a{ href: "#" }
-    /     1
-    /     %span.sr-only (current)
-    / %li
-    /   %a{ href: "#" } 2
-    / %li
-    /   %a{ href: "#" } 3
-    / %li
-    /   %a{ href: "#" } 4
-    / %li
-    /   %a{ href: "#" } 5
-    / %li
-    /   %a{ "aria-label": "Next", href: "#" }
-    /     %span{ "aria-hidden": "true" } »
+

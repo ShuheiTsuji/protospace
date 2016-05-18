@@ -1,6 +1,14 @@
 .col-sm-4.col-md-3.proto-content
   .thumbnail
-    = link_to user_product_path(current_user, product) do
+    - if user_signed_in? && current_user.id == product.user_id
+      .dropdown.drop_menu_location
+        %button.btn.btn-default{ id: "dropdownMenu", type: "button",  data: { toggle: "dropdown" } } menu
+        %ul.dropdown-menu{ aria: { labelledby: "dropdownMenu1" } }
+          %li
+            = link_to "Delete", user_product_path(product.user,product), method: :delete
+          %li
+            = link_to "Edit"  , edit_user_product_path(product.user,product)
+    = link_to user_product_path(product.user, product) do
       = image_tag product.images.main.first.image
       .caption
         %h3= product.title

@@ -1,0 +1,36 @@
+= render "layouts/error", danger: @product
+.container.proto-new
+  = form_for [current_user, @product] do |f|
+    .col-md-8.col-md-offset-2
+      %header.row.user-nav.row
+        .col-md-12
+          = f.text_field :title, placeholder: "title", class: "proto-new-title"
+      .row
+        .col-md-12
+          .cover-image-upload
+            = f.fields_for :images, @product.images.main do |image|
+              = image.file_field :image
+              = image.hidden_field :role, value: :main
+        .col-md-12
+          %ul.proto-sub-list.list-group
+            %li.list-group-item.col-md-4
+              .image-upload
+                = f.fields_for :images, @product.images.sub.first do |image|
+                  = image.file_field :image
+                  = image.hidden_field :role, value: :sub
+            %li.list-group-item.col-md-4
+              .image-upload
+                = f.fields_for :images, @product.images.sub.second do |image|
+                  = image.file_field :image
+                  = image.hidden_field :role, value: :sub
+            %li.list-group-item.col-md-4
+              .image-upload-plus
+                %span +
+      .row.proto-description
+        .col-md-12
+          = f.text_field :catch_copy, placeholder: "Catch Copy"
+        .col-md-12
+          = f.text_area :concept, cols: "30", rows: "4", placeholder: "Concept"
+      .row.text-center.proto-btn
+        = f.submit "publish", class: "btn btn-lg btn-primary btn-block", data: { disable_with: "sending..." }
+

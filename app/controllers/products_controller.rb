@@ -13,8 +13,29 @@ class ProductsController < ApplicationController
     @product.images.build
   end
 
+  def destroy
+    product = Product.find(params[:id])
+    if product.user_id == current_user.id
+      product.destroy
+      redirect_to root_path , notice: 'succeed in delete'
+    end
+  end
+
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    if @product.update(product_params)
+      redirect_to root_path, notice: 'succeed in edit'
+    else
+      render :edit
+    end
+  end
+
   def create
-    @product  = current_user.products.new(create_params)
+    @product  = current_user.products.new(product_params)
     if @product.save
       redirect_to root_path, notice: 'succeed in post'
     else
@@ -27,12 +48,12 @@ class ProductsController < ApplicationController
   end
 
   private
-  def create_params
+  def product_params
     params.require(:product).permit(
       :title,
       :catch_copy,
       :concept,
-      images_attributes: [:image, :role]
+      images_attributes: [:id, :image, :role, :_destroy]
     )
   end
 end
