@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160510130234) do
+ActiveRecord::Schema.define(version: 20160518122746) do
 
   create_table "images", force: :cascade do |t|
     t.integer  "role",       limit: 4,     default: 1
@@ -21,11 +21,19 @@ ActiveRecord::Schema.define(version: 20160510130234) do
     t.datetime "updated_at"
   end
 
-  create_table "products", force: :cascade do |t|
-    t.text     "catch_copy", limit: 65535
-    t.text     "concept",    limit: 65535
-    t.string   "title",      limit: 255
+  create_table "likes", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
+    t.integer  "product_id", limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.text     "catch_copy",  limit: 65535
+    t.text     "concept",     limit: 65535
+    t.string   "title",       limit: 255
+    t.integer  "user_id",     limit: 4
+    t.integer  "likes_count", limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end

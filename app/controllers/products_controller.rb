@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-
+  before_action :set_product, only: [:show, :edit, :update]
   def index
     @products = Product \
                   .order(created_at: :DESC)
@@ -22,11 +22,9 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
   end
 
   def update
-    @product = Product.find(params[:id])
     if @product.update(product_params)
       redirect_to root_path, notice: 'succeed in edit'
     else
@@ -44,7 +42,8 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
+    @user    = User.find(params[:user_id])
+    @like    = Like.find_by(user_id: current_user.id, product_id: params[:id]) if user_signed_in?
   end
 
   private
@@ -55,6 +54,10 @@ class ProductsController < ApplicationController
       :concept,
       images_attributes: [:id, :image, :role, :_destroy]
     )
+  end
+
+  def set_product
+    @product = Product.find(params[:id])
   end
 end
 

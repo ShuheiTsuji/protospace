@@ -13,10 +13,9 @@
             %span.degree= @product.user.profile
 
     .col-md-6.text-right
-      %button.btn.btn-default
-        = image_tag("icon_heart.svg")
-        Like
-        %span.num 20
+    #js-like-buttons
+      = render 'likes/like'
+
   .row
     .col-md-9
       = image_tag("#{@product.images.main.first.image}", class: 'img-responsive')
