@@ -46,7 +46,6 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @user    = User.find(params[:user_id])
-    @likes   = Like.where(product_id: params[:id])
     @like    = Like.find_by(user_id: current_user.id, product_id: params[:id]) if user_signed_in?
   end
 
