@@ -13,8 +13,8 @@
             %span.degree= @product.user.profile
 
     .col-md-6.text-right
-    #like-buttons
-      = render partial: 'likes/like', locals: { product: @product, like: @like, likes: @likes }
+    #js-like-buttons
+      = render partial: 'likes/like'
 
   .row
     .col-md-9
