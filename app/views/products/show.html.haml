@@ -43,9 +43,8 @@
     %h4.col-md-12
       Comments
       %span.num= "(#{@comments.count})"
-      - if @comments
-        #comments
-          = render partial: 'comments/comment', collection: @comments
+      #comments
+        = render partial: 'comments/comment', collection: @comments
   - if user_signed_in?
     .col-md-8
       = form_for [@user, @product, @comment], remote: true do |f|
