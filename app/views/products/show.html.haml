@@ -54,5 +54,5 @@
           .form-group.col-md-10
             = f.text_area :text, placeholder: "Your comments", rows: "3", cols: "60", id: 'comment_field'
           .form-group.col-md-2
-            = f.submit 'Comment', class: 'btn btn-primary'
+            = f.submit 'Comment', class: 'btn btn-primary', data: { disable_with: "sending..." }
 
