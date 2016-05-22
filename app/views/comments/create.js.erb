@@ -1,0 +1,5 @@
+$('#comment_field').val('');
+$('#comments').html(
+  '<%= j(render partial: 'comments/comment', collection: @comments) %>'
+);
+
