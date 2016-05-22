@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_many   :likes
   has_many   :products
+  has_many   :comments
 
   validates  :name,                      presence: true, length: { maximum: 6 }
   validates  :member, :profile, :works,  presence: true
