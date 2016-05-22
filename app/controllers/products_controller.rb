@@ -44,6 +44,8 @@ class ProductsController < ApplicationController
   def show
     @user    = User.find(params[:user_id])
     @like    = Like.find_by(user_id: current_user.id, product_id: params[:id]) if user_signed_in?
+    @comment  = Comment.new
+    @comments = @product.comments.includes(:user)
   end
 
   private
