@@ -5,5 +5,6 @@ class Product::PopularController < ProductsController
                    .includes(:user)
                    .page(params[:page])
                    .per(20)
+    render :index
   end
 end
