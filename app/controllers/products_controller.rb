@@ -1,11 +1,11 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update]
   def index
-    @products = Product \
-                  .order(created_at: :DESC)
-                  .includes(:user)
-                  .page(params[:page])
-                  .per(20)
+    @products         = Product \
+                          .order(created_at: :DESC)
+                          .includes(:user)
+                          .page(params[:page])
+                          .per(20)
   end
 
   def new
@@ -42,7 +42,6 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @user    = User.find(params[:user_id])
     @like    = Like.find_by(user_id: current_user.id, product_id: params[:id]) if user_signed_in?
     @comment  = Comment.new
     @comments = @product.comments.includes(:user)
