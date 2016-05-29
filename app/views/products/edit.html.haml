@@ -1,6 +1,6 @@
 = render "layouts/error", danger: @product
 .container.proto-new
-  = form_for [current_user, @product] do |f|
+  = form_for (@product) do |f|
     .col-md-8.col-md-offset-2
       %header.row.user-nav.row
         .col-md-12
