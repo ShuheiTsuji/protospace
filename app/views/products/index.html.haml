@@ -5,10 +5,18 @@
   .container
     .row
       %ul.nav.nav-pills.col-lg-11
-        %li.active{ role: "presentation" }
-          = link_to "Popular PROTO", product_popular_index_path
-        %li{ role: "presentation" }
-          = link_to "Newest PROTO", root_path
+        - if current_page?(controller: "product/popular", action: "index")
+          %li{ role: "presentation" }
+            = link_to "Popular PROTO", product_popular_index_path
+          %li.active{ role: "presentation" }
+            = link_to "Newest PROTO", root_path
+        - else
+          %li.active{role: "presentation"}
+            = link_to "Popular PROTO", product_popular_index_path
+          %li{role: "presentation"}
+            = link_to "Newest PROTO", root_path
+
+
       %button{ type: "button", class: "btn btn-default col-lg-1" } View Tags
 .container.proto-list
   .row
@@ -17,4 +25,5 @@
   %ul.pagination
     %li.disabled
       = paginate(@products)
+
 
