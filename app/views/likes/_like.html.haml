@@ -1,19 +1,20 @@
 - if user_signed_in?
   - if @product.like_user(current_user)
-    = button_to user_product_like_path(@user, @product, @like), method: :delete, id: "js-like-button", class: "btn btn-default decrement-button", data: { disable_with: "sending..." }, remote: true do
+    = button_to product_like_path(@product, @like), method: :delete, id: "js-like-button", class: "btn btn-default decrement-button", data: { disable_with: "sending..." }, remote: true do
       = image_tag("icon_heart_red.svg")
       %span
         #like-sum
           = @product.likes_count
   - else
-    = button_to user_product_likes_path(@user, @product), id: "js-like-button", class: "btn btn-default", data: { disable_with: "sending..." }, remote: true do
+    = button_to product_likes_path(@product), id: "js-like-button", class: "btn btn-default", data: { disable_with: "sending..." }, remote: true do
       = image_tag("icon_heart.svg")
       %span
         #like-sum
           = @product.likes_count
 - else
-  = image_tag("icon_heart_red.svg")
-  %span
-    #like-sum
-      = @product.likes_count
+  = button_tag disabled: 'disabled', id: "js-like-button", class: "btn btn-default" do
+    = image_tag("icon_heart_red.svg")
+    %span
+      #like-sum
+        = @product.likes_count
 

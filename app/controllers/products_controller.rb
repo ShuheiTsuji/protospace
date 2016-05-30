@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product  = current_user.products.new(product_params)
+    @product = current_user.products.new(product_params)
     if @product.save
       redirect_to root_path, notice: 'succeed in post'
     else
@@ -42,8 +42,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @user    = User.find(params[:user_id])
-    @like    = Like.find_by(user_id: current_user.id, product_id: params[:id]) if user_signed_in?
+    @like     = Like.find_by(user_id: current_user.id, product_id: params[:id]) if user_signed_in?
     @comment  = Comment.new
     @comments = @product.comments.includes(:user)
   end
