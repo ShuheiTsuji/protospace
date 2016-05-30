@@ -5,7 +5,7 @@
   .container
     .row
       %ul.nav.nav-pills.col-lg-11
-        - if current_page?(controller: "product/popular", action: "index")
+        - if current_page?(product_popular_index_path)
           %li{ role: "presentation" }
             = link_to "Popular PROTO", product_popular_index_path
           %li.active{ role: "presentation" }
