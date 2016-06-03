@@ -10,42 +10,6 @@
 .container
   .row
   %h2
-    :css
-      .btn.btn-default {
-        position: relative;
-        z-index: 2;
-        background-color: white;
-        border: 1px solid white;
-        border-radius: 3px;
-        color: #262626;
-        height: 57px;
-        line-height: 32px;
-        width: 367px;
-        list_style: none;
-      }
-      .btn.btn-default:hover {
-        background-color: #EEEEEE;
-        border-color: #EEEEEE;
-        color: #262626;
-      }
-      .btn.btn-default::before,
-      .btn.btn-default::after {
-        top: 0;
-        width: 50%;
-        height: 100%;
-        background-color: #333;
-      }
-      .btn.btn-default::before {
-        right: 0;
-      }
-      .btn.btn-default::after {
-        left: 0;
-      }
-      .btn.btn-default:hover::before,
-      .btn.btn-default:hover::after {
-        width: 0;
-        background-color: #59b1eb;
-      }
     - @tags.each do |tag|
       %ul.col-md-4
-        = link_to tag.name, tag_path(tag.id), class: 'btn btn-default'
+        = link_to tag.name, tag_path(tag.id), class: 'btn btn-defaults'
