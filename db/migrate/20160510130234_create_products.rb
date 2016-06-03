@@ -6,6 +6,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string      :title
       t.references  :user
       t.integer     :likes_count
+      t.text        :tag_list
       t.timestamps
     end
   end
