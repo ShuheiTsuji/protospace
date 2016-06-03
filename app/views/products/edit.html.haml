@@ -35,9 +35,7 @@
           %h4 Tag List
           .row
             .col-md-3
-              = text_field_tag "product[tag][]", "", placeholder: "Web Design"
-              = text_field_tag "product[tag][]", "", placeholder: "UI"
-              = text_field_tag "product[tag][]", "", placeholder: "Application"
+              = text_field_tag "product[tag][]", placeholder: "tag ex(犬,猫)"
       .row.text-center.proto-btn
         = f.submit "publish", class: "btn btn-lg btn-primary btn-block", data: { disable_with: "sending..." }
 
