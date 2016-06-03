@@ -7,7 +7,7 @@ class TagsController < ApplicationController
     @tag      = ActsAsTaggableOn::Tag.find(params[:id])
     @products = Product \
                   .tagged_with(@tag.name)
-                  .includes(:user)
+                  .includes(:user, :tags)
                   .page(params[:page])
                   .per(20)
   end
