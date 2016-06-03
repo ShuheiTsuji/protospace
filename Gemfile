@@ -9,6 +9,7 @@ gem 'autoprefixer-rails'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'kaminari'
+gem 'acts-as-taggable-on', '~> 3.4'
 
 # function
 gem 'devise'
