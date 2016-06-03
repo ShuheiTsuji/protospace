@@ -45,7 +45,7 @@ class ProductsController < ApplicationController
     @like     = Like.find_by(user_id: current_user.id, product_id: params[:id]) if user_signed_in?
     @comment  = Comment.new
     @comments = @product.comments.includes(:user)
-    @tags = ActsAsTaggableOn::Tag.includes(:tag, :user)
+    @tags     = ActsAsTaggableOn::Tag.includes(:tag, :user)
   end
 
   private
