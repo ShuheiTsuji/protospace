@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     @user     = User.find(params[:id])
     @products = Product \
                   .order(created_at: :DESC)
-                  .includes(:user)
+                  .includes(:user, :tags)
                   .page(params[:page])
                   .per(20)
   end
