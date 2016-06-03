@@ -8,11 +8,12 @@ class Product < ActiveRecord::Base
   has_many   :tags
   accepts_nested_attributes_for :images, allow_destroy: true
   validates :catch_copy, :concept, :title,  presence: true
-  def like_user(user)
-   likes.find_by(user_id: user.id)
-  end
 
   acts_as_ordered_taggable_on :products
   acts_as_taggable_on :tags
+
+  def like_user(user)
+   likes.find_by(user_id: user.id)
+  end
 end
 
