@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   def index
     @products = Product \
                   .order(created_at: :DESC)
-                  .includes(:user)
+                  .includes([:user, :tags])
                   .page(params[:page])
                   .per(20)
   end
@@ -45,6 +45,7 @@ class ProductsController < ApplicationController
     @like     = Like.find_by(user_id: current_user.id, product_id: params[:id]) if user_signed_in?
     @comment  = Comment.new
     @comments = @product.comments.includes(:user)
+    @tags = ActsAsTaggableOn::Tag.includes(:tag, :user)
   end
 
   private
@@ -54,11 +55,10 @@ class ProductsController < ApplicationController
       :catch_copy,
       :concept,
       images_attributes: [:id, :image, :role, :_destroy]
-    )
+    ).merge(tag_list: params[:product][:tag])
   end
 
   def set_product
     @product = Product.find(params[:id])
   end
 end
-
