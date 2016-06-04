@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
   def show
     @user     = User.find(params[:id])
-    @product  = @user \
-                  .products
-                  .includes(:tags)
-                  .page(params[:page])
-                  .per(20)
+    @products = @user \
+                   .products
+                   .includes(:tags)
+                   .page(params[:page])
+                   .per(20)
   end
 
   def update
