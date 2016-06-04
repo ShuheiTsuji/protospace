@@ -34,8 +34,9 @@
         .col-md-12
           %h4 Tag List
           .row
-            .col-md-3
-              = text_field_tag "product[tag][]", placeholder: "tag"
+            - 3.times do |i|
+              .col-md-3
+                = text_field_tag "product[tag][]", "#{ @product.tags[i].name }", placeholder: "Tag"
       .row.text-center.proto-btn
         = f.submit "publish", class: "btn btn-lg btn-primary btn-block", data: { disable_with: "sending..." }
 
