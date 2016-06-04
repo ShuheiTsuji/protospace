@@ -14,12 +14,12 @@
         %h3= product.title
         .proto-meta
           .proto-user
-            = link_to "by #{ product.user.name }"
+            = link_to "by #{ product.user.name }", user_path(product.user)
           .proto-posted
             = product.created_at.strftime('%m/%d/%Y')
         %ul.proto-tag-list.list-inline
           %li
-            %a{ href: "#", class: "btn btn-default"} iPad
-          %li
-            %a{ href: "#", class: "btn btn-default" } wireframe
+            - product.tags.each do |tag|
+              %li
+                = link_to tag, tag_path(tag), class: "btn btn-default"
 
