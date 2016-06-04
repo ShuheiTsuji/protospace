@@ -36,7 +36,7 @@
           .row
             - 3.times do |i|
               .col-md-3
-                = text_field_tag "product[tag][]", "#{ @product.tags[i].name }", placeholder: "Tag"
+                = text_field_tag "product[tag][]", "#{ @product.tags[i].name }"
       .row.text-center.proto-btn
         = f.submit "publish", class: "btn btn-lg btn-primary btn-block", data: { disable_with: "sending..." }
 
