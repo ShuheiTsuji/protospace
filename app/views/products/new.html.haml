@@ -1,6 +1,6 @@
 = render "layouts/error", danger: @product
 .container.proto-new
-  = form_for (@product) do |f|
+  = form_for (@product),html: {id: 'product'} do |f|
     .col-md-8.col-md-offset-2
       %header.row.user-nav.row
         .col-md-12
@@ -8,17 +8,19 @@
       .row
         .col-md-12
           .cover-image-upload
+            #js-new_product_image
             = f.fields_for :images do |image|
-              = image.file_field :image
+              = image.file_field :image, id: "js-new_product"
               = image.hidden_field :role, value: :main
-      - 2.times do
+      - 2.times do |i|
         .col-md-12
           %ul.proto-sub-list.list-group
             %li.list-group-item.col-md-4
               .image-upload
-                = f.fields_for :images do |image|
-                  = image.file_field :image
-                  = image.hidden_field :role, value: :sub
+                %div{id: "js-new_product_image#{i + 1}"}
+                  = f.fields_for :images do |image|
+                    = image.file_field :image, id: "js-product_images_attributes_#{i + 1}_image"
+                    = image.hidden_field :role, value: :sub
       %li.list-group-item.col-md-4
         .image-upload-plus
           %span +
