@@ -654,3 +654,40 @@ ul.dropdown-menu {
   width: 0;
   background-color: #59b1eb;
 }
+
+
+#user_image img {
+  width:75px;
+  height:75px;
+  border-radius: 75px;
+  -webkit-border-radius: 75px;
+  -moz-border-radius: 75px;
+  top: 0px;
+  left: 0px;
+  margin-left: -15px;
+  }
+
+
+  #js-new_product_image img {
+  width: 690px;
+  height: 500px;
+  }
+
+  #js-new_product_image1 img {
+  width: 690px;
+  height: 220px;
+  margin-left: -15px;
+  margin-top: -10px;
+  float: left;
+  }
+
+  #js-new_product_image2 img {
+  width: 690px;
+  height: 220px;
+  margin-left: -15px;
+  margin-top: -10px;
+  }
+
+.img-responsive img {
+  width: 720px;
+}
