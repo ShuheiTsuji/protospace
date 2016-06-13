@@ -8,9 +8,9 @@
       .row
         .col-md-12
           .cover-image-upload
-            #js-new_product_image
+            #js-new_product_image0
             = f.fields_for :images do |image|
-              = image.file_field :image, id: "js-new_product"
+              = image.file_field :image, id: "js-product_images_attributes_0_image"
               = image.hidden_field :role, value: :main
       - 2.times do |i|
         .col-md-12
@@ -18,9 +18,9 @@
             %li.list-group-item.col-md-4
               .image-upload
                 %div{id: "js-new_product_image#{i + 1}"}
-                  = f.fields_for :images do |image|
-                    = image.file_field :image, id: "js-product_images_attributes_#{i + 1}_image"
-                    = image.hidden_field :role, value: :sub
+                = f.fields_for :images do |image|
+                  = image.file_field :image, id: "js-product_images_attributes_#{i + 1}_image"
+                  = image.hidden_field :role, value: :sub
       %li.list-group-item.col-md-4
         .image-upload-plus
           %span +
