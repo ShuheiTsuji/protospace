@@ -8,27 +8,22 @@
       .row
         .col-md-12
           .cover-image-upload
-            #js-new_product_image= image_tag("#{@product.images.main.first.image}")
+            #js-new_product_image0= image_tag("#{@product.images.main.first.image}")
             = f.fields_for :images, @product.images.main do |image|
-              = image.file_field :image, id: "js-new_product"
+              = image.file_field :image, id: "js-product_images_attributes_0_image"
               = image.hidden_field :role, value: :main
         .col-md-12
           %ul.proto-sub-list.list-group
+          - @product.images.sub.each.with_index(1) do |word, index|
             %li.list-group-item.col-md-4
               .image-upload
-                #js-new_product_image1= image_tag("#{@product.images.main.first.image}")
+                %div{id: "js-new_product_image#{index}"}= image_tag("#{word.image}")
                 = f.fields_for :images, @product.images.sub.first do |image|
-                  = image.file_field :image, id: "js-product_images_attributes_1_image"
+                  = image.file_field :image, id: "js-product_images_attributes_#{index}_image"
                   = image.hidden_field :role, value: :sub
-            %li.list-group-item.col-md-4
-              .image-upload
-                #js-new_product_image2= image_tag("#{@product.images.sub.second.image}")
-                = f.fields_for :images, @product.images.sub.second do |image|
-                  = image.file_field :image, id: "js-product_images_attributes_2_image"
-                  = image.hidden_field :role, value: :sub
-            %li.list-group-item.col-md-4
-              .image-upload-plus
-                %span +
+          %li.list-group-item.col-md-4
+            .image-upload-plus
+              %span +
       .row.proto-description
         .col-md-12
           = f.text_field :catch_copy, placeholder: "Catch Copy"
