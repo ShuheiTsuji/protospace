@@ -20,8 +20,13 @@ class ImageUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg gif png)
   end
 
+  def default_url
+    'noimage.png'
+  end
+
   # 変換したファイルのファイル名の規則
   def filename
     "#{Time.now.strftime('%Y%m%d%H%M%S')}.jpg" if original_filename.present?
   end
 end
+
