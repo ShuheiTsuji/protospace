@@ -1,0 +1,10 @@
+.col-md-12
+  %ul.proto-sub-list.list-group
+  - @product.images.sub.each.with_index(1) do |word, index|
+    %li.list-group-item.col-md-4
+      .image-upload
+        %div{id: "js-new_product_image#{index}"}= image_tag("#{word.image}")
+        = f.fields_for :images, @product.images.sub.first do |image|
+          = image.file_field :image, id: "js-product_images_attributes_#{index}_image"
+          = image.hidden_field :role, value: :sub
+
