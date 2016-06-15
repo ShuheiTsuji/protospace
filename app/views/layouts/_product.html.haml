@@ -5,7 +5,7 @@
         %button.btn.btn-default{ id: "dropdownMenu", type: "button",  data: { toggle: "dropdown" } } menu
         %ul.dropdown-menu{ aria: { labelledby: "dropdownMenu1" } }
           %li
-            = link_to "Delete", product, method: :delete, data: { confirm: "Are you absolutely sure you want to delete <strong>#{product.title}</strong>?", commit:  'Delete', cansel: false, "verify" => product.title,"verify-text" => " This action cannot be undone. Please type in the name of the product to confirm."}, title: "Verify the deletion"
+            = link_to "Delete", product, method: :delete, data: { confirm: "Are you absolutely sure you want to delete <strong>#{product.title}</strong>?", commit:  'Delete', cansel: false, verify: product.title,"verify-text" => " This action cannot be undone. Please type in the name of the product to confirm."}, title: "Verify the deletion"
           %li
             = link_to "Edit"  , edit_product_path(product)
     = link_to product_path(product) do
