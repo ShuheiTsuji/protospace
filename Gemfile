@@ -10,6 +10,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'kaminari'
 gem 'acts-as-taggable-on', '~> 3.4'
+gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
 
 # function
 gem 'devise'
