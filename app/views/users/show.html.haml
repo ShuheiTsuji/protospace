@@ -7,7 +7,7 @@
         %h4#top-aligned-media.media-heading
           = @user.name
           %span.label.label-default.project-number
-            29
+            = @products.count
             %i Projects
         .proto-user
           %span.degree= @user.member
@@ -20,7 +20,7 @@
             %p= @user.works
 .container.proto-list
   .row
-    = render partial: "layouts/product", collection: @product
+    = render partial: "layouts/product", collection: @products
 .text-center
-  = paginate(@product)
+  = paginate(@products)
 
