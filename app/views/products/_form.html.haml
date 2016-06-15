@@ -10,7 +10,7 @@
           .cover-image-upload
             #js-new_product_image0
               = main_image
-            = f.fields_for :images, sub_image do |image|
+            = f.fields_for :images, post_main_image_helper do |image|
               = image.file_field :image, id: "js-product_images_attributes_0_image"
               = image.hidden_field :role, value: :main
         .col-md-12
