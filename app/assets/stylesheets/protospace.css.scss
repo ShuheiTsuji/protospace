@@ -632,6 +632,7 @@ ul.dropdown-menu {
   width: 367px;
   list-style: none;
 }
+
 .btn.btn-defaults:hover {
   background-color: #EEEEEE;
   border-color: #EEEEEE;
@@ -704,4 +705,20 @@ ul.dropdown-menu {
 
 .alert.alert-notice{
   margin-bottom: 0;
+}
+
+.btn.cancel.btn-default {
+  width: 80px;
+  height: 35px;
+  position: absolute;
+  top: 5px;
+  right: 120px;
+}
+
+.btn.commit.btn-danger {
+  float: right;
+}
+
+.modal-footer {
+  position: relative;
 }
