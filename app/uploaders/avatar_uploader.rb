@@ -1,7 +1,7 @@
 class AvatarUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
 
-  storage :file
+  storage :fog
 
   process convert: 'jpg'
 
