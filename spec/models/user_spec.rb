@@ -61,6 +61,12 @@ describe User do
       user = build(:user, name: "aaaaaa")
       expect(user).to be_valid
     end
+
+    it "is invalid without a password_confirmation although with a password" do
+      user = build(:user, password_confirmation: "")
+      user.valid?
+      expect(user.errors[:password_confirmation]).to include("doesn't match Password")
+    end
   end
 
 end
