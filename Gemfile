@@ -26,6 +26,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   gem 'byebug'
   gem 'execjs'
+  gem "rspec-rails"
+  gem "factory_girl_rails"
+  gem 'pry-rails'
 end
 
 group :development do
@@ -35,3 +38,12 @@ group :development do
   gem 'bullet'
 end
 
+group :test do
+  gem "faker"
+  gem "capybara"
+  gem "database_cleaner"
+  gem "launchy"
+  gem "poltergeist"
+  gem 'rspec-rails'
+  gem 'pry-rails'
+end
