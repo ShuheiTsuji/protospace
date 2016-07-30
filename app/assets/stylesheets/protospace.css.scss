@@ -333,6 +333,7 @@ body {
     #js-like-buttons {
       padding-right: 35px;
 
+
       img {
         max-width: 18px;
         margin-right: 5px;
@@ -721,4 +722,10 @@ ul.dropdown-menu {
 
 .modal-footer {
   position: relative;
+}
+
+#js-like-button {
+  position: absolute;
+  top: 13%;
+  right: 13%;
 }
