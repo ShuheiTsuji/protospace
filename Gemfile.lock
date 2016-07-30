@@ -51,6 +51,10 @@ GEM
     autoprefixer-rails (6.3.6.2)
       execjs
     bcrypt (3.1.11)
+    better_errors (2.1.1)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.6)
@@ -360,6 +364,8 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     sexp_processor (4.7.0)
+    shoulda-matchers (3.1.1)
+      activesupport (>= 4.0.0)
     slop (3.6.0)
     spring (1.7.1)
     sprockets (3.6.1)
@@ -372,6 +378,7 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.5)
+    timecop (0.8.1)
     trollop (2.1.2)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
@@ -398,6 +405,8 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on (~> 3.4)
   autoprefixer-rails
+  better_errors
+  binding_of_caller
   bootstrap-sass
   bullet
   byebug
@@ -425,7 +434,9 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  shoulda-matchers
   spring
+  timecop
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
 
