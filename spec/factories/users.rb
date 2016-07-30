@@ -1,7 +1,7 @@
 FactoryGirl.define do
 
   factory :user do
-     name              { Faker::Name.name }
+     name              'aaa'
      email             { Faker::Internet.email }
      password          { Faker::Internet.password(8) }
      profile           { Faker::University.name }
@@ -9,5 +9,4 @@ FactoryGirl.define do
      works             { Faker::Company.name }
   end
 end
-
 
