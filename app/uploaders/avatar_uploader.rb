@@ -15,14 +15,20 @@ class AvatarUploader < CarrierWave::Uploader::Base
     process :resize_to_fit => [400, 200]
   end
 
+  def default_url
+    # For Rails 3.1+ asset pipeline compatibility:
+    # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
+    'noimage.png'
+  end
+
   # 許可する画像の拡張子
   def extension_white_list
     %w(jpg jpeg gif png)
   end
 
-  # 変換したファイルのファイル名の規則
+  # 拡張子が同じでないとGIFをJPGとかにコンバートできないので、ファイル名を変更
   def filename
-    "#{Time.now.strftime('%Y%m%d%H%M%S')}.jpg" if original_filename.present?
+    super.chomp(File.extname(super)) + '.jpg' if original_filename.present?
   end
 end
 
