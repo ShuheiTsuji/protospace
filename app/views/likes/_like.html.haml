@@ -13,7 +13,7 @@
           = @product.likes_count
 - else
   = button_tag disabled: 'disabled', id: "js-like-button", class: "btn btn-default" do
-    = image_tag("icon_heart_red.svg")
+    = image_tag("icon_heart.svg")
     %span
       #like-sum
         = @product.likes_count
