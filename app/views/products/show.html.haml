@@ -10,7 +10,7 @@
             = @product.title
           .proto-user
             = link_to "by #{@product.user.name}"
-            %span.degree= @product.user.profile
+        %span.degree= @product.user.profile
     .col-md-6.text-right
     #js-like-buttons
       = render 'likes/like'
