@@ -6,7 +6,7 @@ name                string
 password            string  
 works               text  
 created_at          date  
-updated_at          date  
+updated_at          date
 member              string  
 profile             text  
 avatar              text  
