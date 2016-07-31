@@ -23,6 +23,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+
 group :development, :test do
   gem 'byebug'
   gem 'execjs'
@@ -34,16 +35,17 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'pry-rails'
   gem 'bullet'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :test do
+  gem 'timecop'
   gem "faker"
   gem "capybara"
   gem "database_cleaner"
   gem "launchy"
   gem "poltergeist"
-  gem 'rspec-rails'
-  gem 'pry-rails'
+  gem "shoulda-matchers"
 end
