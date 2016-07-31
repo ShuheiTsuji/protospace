@@ -33,7 +33,11 @@ RSpec.describe Image, type: :model do
       end
     end
   end
+
+  describe '#association' do
+    describe 'is associated with product' do
+      it { should belong_to(:product) }
+    end
+  end
 end
-
-
 

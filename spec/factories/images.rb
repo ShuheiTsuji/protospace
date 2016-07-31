@@ -11,6 +11,8 @@ FactoryGirl.define do
     trait :sub do
       role   :sub
     end
+
+    association      :product
   end
 end
 
