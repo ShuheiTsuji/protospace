@@ -14,6 +14,9 @@ CarrierWave.configure do |config|
     when 'production'
         config.fog_directory  = 'tsujishuheipacket'
         config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/tsujishuheipacket'
+    when 'test'
+        config.fog_directory  = 'tsujishuheipacket'
+        config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/tsujishuheipacket'
     end
 end
 

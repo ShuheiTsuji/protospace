@@ -3,6 +3,6 @@ class Image < ActiveRecord::Base
   enum role: %i(main sub)
   mount_uploader :image, ImageUploader
 
-  validates :image,  presence: true
+  validates :image, :role,  presence: true
 end
 
