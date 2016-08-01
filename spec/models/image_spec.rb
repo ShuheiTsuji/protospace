@@ -32,12 +32,13 @@ RSpec.describe Image, type: :model do
         expect(image).to be_valid
       end
     end
-  end
 
-  describe '#association' do
-    describe 'is associated with product' do
-      it { should belong_to(:product) }
+    describe '#with association' do
+      let(:product) { create(:product) }
+      let(:image) { create(:image, :main, product: product) }
+      it 'is associated with a product' do
+        expect(image.product).to eq product
+      end
     end
   end
 end
-
