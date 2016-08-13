@@ -13,7 +13,6 @@ describe ProductsController do
   context "with user login" do
     before { login_user }
     describe "GET #new" do
-      let(:product) { create(:product) }
       it "renders the :new template" do
         get :new, id: product
         expect(response).to render_template :new
@@ -24,7 +23,6 @@ describe ProductsController do
       end
     end
     describe "GET #show" do
-      let(:product) { create(:product) }
       before do
         get :show, id: product
       end
