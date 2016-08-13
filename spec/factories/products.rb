@@ -3,6 +3,8 @@ FactoryGirl.define do
     catch_copy   { Faker::Lorem.sentence }
     concept      { Faker::Lorem.paragraph }
     title        { Faker::Lorem.sentence }
+    user
+    created_at   { Faker::Time.between(2.days.ago, Time.now, :all) }
 
     trait :with_comments do
       transient do
