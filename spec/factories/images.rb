@@ -11,6 +11,9 @@ FactoryGirl.define do
     trait :sub do
       role   :sub
     end
+
+    factory :main_image, traits: [:main]
+    factory :sub_image,  traits: [:sub]
   end
 end
 
