@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update]
+  before_action :authenticate_user!, only: [:edit, :update]
+
   def show
-    @user     = User.find(params[:id])
     @products = @user \
                    .products
                    .includes(:tags)
@@ -8,9 +10,12 @@ class UsersController < ApplicationController
                    .per(20)
   end
 
+  def edit
+  end
+
   def update
     if current_user.update(update_params)
-      redirect_to user_path(current_user), notice: 'succeed in edit'
+      redirect_to root_path, notice: 'succeed in edit'
     else
       render :edit
     end
@@ -25,6 +30,10 @@ class UsersController < ApplicationController
       :works,
       :avatar
       )
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end
 

@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_product, only: [:show, :edit, :update]
   def index
     @products = Product \
@@ -14,14 +15,16 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    product = Product.find(params[:id])
-    if product.user_id == current_user.id
-      product.destroy
-      redirect_to root_path , notice: 'succeed in delete'
+    @product = Product.find(params[:id])
+    if @product.user_id == current_user.id
+      @product.destroy
     end
+    redirect_to root_path , notice: 'succeed in delete'
   end
 
   def edit
+    @main_image = @product.images.main
+    @sub_image  = @product.images.sub
   end
 
   def update
@@ -42,6 +45,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @likes    = @product.likes
     @like     = Like.find_by(user_id: current_user.id, product_id: params[:id]) if user_signed_in?
     @comment  = Comment.new
     @comments = @product.comments.includes(:user)
