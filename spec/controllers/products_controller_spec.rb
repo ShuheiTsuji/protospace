@@ -7,9 +7,9 @@ describe ProductsController do
       product: attributes_for(:product, title: 'aaa')
   }}
   let(:invalid_params) {{
-      id: product.id,
-      product: attributes_for(:product, title: nil)
-  }}
+        id: product.id,
+        product: attributes_for(:product, title: nil)
+    }}
   context "with user login" do
     before { login_user }
     describe "GET #new" do
@@ -121,7 +121,7 @@ describe ProductsController do
       end
 
       context "with invalid attributes" do
-        before do
+        before :each do
           patch :update, invalid_params
         end
         it "assigns the requested product to @product" do
@@ -131,26 +131,28 @@ describe ProductsController do
           expect(response).to render_template(:edit)
         end
         it "does not save the new product" do
-          patch :update, id: product, product: attributes_for(:product, title: "nil")
           product.reload
-          expect(product.title).to eq 'nil'
+          expect(product.title).not_to eq nil
         end
       end
     end
 
     describe "DELETE #destory" do
+      before do
+        delete :destroy, id: product
+      end
       it "deletes the product" do
         product = create(:product)
-        delete :destroy, id: product
         expect{ product.destroy }.to change(Product, :count).by(-1)
       end
       it 'assigns the requested product to @product' do
-        delete :destroy, id: product
         expect(assigns(:product)).to eq product
       end
       it 'redirect the root_path' do
-        delete :destroy, id: product
         expect(response).to redirect_to root_path
+      end
+      it "shows flash messages to delete the product successfully" do
+        expect(flash[:notice]).to eq 'succeed in delete'
       end
     end
   end
