@@ -194,4 +194,3 @@ describe ProductsController do
     end
   end
 end
-
