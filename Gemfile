@@ -27,9 +27,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   gem 'byebug'
   gem 'execjs'
-  gem "rspec-rails"
   gem "factory_girl_rails"
   gem 'pry-rails'
+
 end
 
 group :development do
@@ -43,9 +43,12 @@ end
 group :test do
   gem 'timecop'
   gem "faker"
-  gem "capybara"
   gem "database_cleaner"
   gem "launchy"
   gem "poltergeist"
   gem "shoulda-matchers"
+  gem "capybara"
+  gem "rspec-rails"
+  gem 'capybara-webkit'
+  gem 'selenium-webdriver'
 end
