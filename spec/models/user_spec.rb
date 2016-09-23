@@ -68,5 +68,4 @@ describe User do
       expect(user.errors[:password_confirmation]).to include("doesn't match Password")
     end
   end
-
 end

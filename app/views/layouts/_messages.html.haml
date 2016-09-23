@@ -1,6 +1,7 @@
 - flash.each do |key, value|
-  %div{class: "alert alert-#{key}"}
-    %a{href: "#", "data-dismiss": "alert", class: "close"}×
+  %div{ class: "alert alert-#{key}" }
+    %a{ href: "#", data: {dismiss: "alert"}, class: "close" }×
     %ul
       %li
         = value
+

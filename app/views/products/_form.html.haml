@@ -12,7 +12,7 @@
               = main_image
             = f.fields_for :images, post_main_image_helper do |image|
               = image.file_field :image, id: "js-product_images_attributes_0_image"
-              = image.hidden_field :role, value: :main
+              = image.hidden_field :role, value: :main``
         .col-md-12
           %ul.proto-sub-list.list-grouap
             = render "post_#{action}_image", f: f
@@ -32,3 +32,4 @@
                     = text_field_tag "product[tag][]", '', placeholder: "Tag#{i + 1}"
           .row.text-center.proto-btn
             = f.submit "publish", class: "btn btn-lg btn-primary btn-block", data: { disable_with: 'Sending...' }
+
